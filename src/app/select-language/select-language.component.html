@@ -1,0 +1,27 @@
+<div class="h-screen w-full">
+  <div class="absolute bg-[url('assets/images/logo.png')] bg-no-repeat bg-center blur-lg h-screen w-screen"></div>
+  <!-- header -->
+  <div class="w-full px-3 py-4">
+    <div class="flex justify-center items-center text-xl text-white font-medium capitalize">
+      <img class="w-4 h-4" src="assets/images/logo.png" alt="" />
+    </div>
+  </div>
+  <!-- section content -->
+  <div
+    class="flex flex-col relative items-center justify-between section-content h-[calc(100%-4.4rem)] w-full px-6 p-4">
+
+    <div class="flex flex-col items-center my-8">
+      <i class="fa-solid fa-language text-2xl text-blue-500"></i>
+      <span class="text-lg font-semibold text-blue-500 my-4 tracking-wider">SELECT LANGUAGE</span>
+
+      <div class="my-16">
+        <button
+          class="bg-blue-500 w-40 mx-auto block rounded-full p-1 mt-6 mb-3 text-lg font-light tracking-wider capitalize text-white"
+          (click)="navigateToEnterPhone()">English</button>
+        <button
+          class="bg-blue-500 w-40 mx-auto block rounded-full p-1 mt-6 mb-3 text-lg font-ligth tracking-wider capitalize text-white"
+          (click)="navigateToEnterPhone()">Spanish </button>
+      </div>
+    </div>
+  </div>
+</div>

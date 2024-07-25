@@ -1,0 +1,77 @@
+<div class="h-screen w-full">
+  <!-- header -->
+  <div class="h-25 h-36 w-full rounded-b-3xl bg-[url('assets/images/zalivio-app-bg-03.jpg')] px-3 py-2">
+    <div class="flex justify-between items-center">
+      <span class="material-icons text-4xl text-white" (click)="navigateToSlider()">keyboard_arrow_left</span>
+      <img class="w-4 h-4" src="assets/images/logo.png" alt="" />
+      <span (click)="navigateToProfile()" class="material-icons text-4xl text-blue-600">manage_accounts</span>
+    </div>
+  </div>
+  <!-- section content -->
+  <div
+    class="section-content bg-[url('assets/images/zalivio-app-bg.jpg')] bg-contain h-[calc(100%-9rem)] w-full bg-white p-4">
+    <!-- ------ -->
+    <div class="flex h-full flex-col justify-between">
+      <div class="">
+        <div (click)="navigateToContactList()"
+          class="mx-auto -mt-11 flex w-11/12 justify-between rounded-2xl border bg-slate-50 p-3 text-sm font-bold text-blue-500">
+          <div class="flex items-center">
+            <i class="fa-regular fa-address-book text-4xl"></i>
+            <span class="ml-3 capitalize">all contacts</span>
+          </div>
+          <div class="flex items-center">
+            <span class="mr-2 font-thin">{{contactsLength ? contactsLength : '0'}}</span>
+            <span class="material-icons font-bold text-4xl text-blue-600">keyboard_arrow_right</span>
+          </div>
+        </div>
+
+        <!-- cards ----- -->
+
+        <div class="cards capitalize">
+          <div class="my-12 flex w-full justify-center text-blue-500">
+            <div class="flex w-24 flex-col rounded-xl border border-slate-300 bg-gray-100 p-3 text-center align-middle">
+              <i class="fas fa-users text-white text-4xl rounded-md bg-blue-600 px-1 py-3"></i>
+              <i class=""></i>
+              <span class="text-xl font-thin">0</span>
+              <span class="text-sm font-bold">Total</span>
+            </div>
+          </div>
+
+          <div class="flex w-full justify-between text-blue-500">
+            <div class="flex w-24 flex-col rounded-xl border border-slate-300 bg-gray-100 p-3 text-center align-middle">
+              <i class="fas fa-user-alt text-white text-4xl rounded-md bg-orange-500 px-1 py-3"></i>
+              <span class="text-xl font-thin">0</span>
+              <span class="text-sm font-bold">prospectos</span>
+            </div>
+
+            <div class="flex w-24 flex-col rounded-xl border border-slate-300 bg-gray-100 p-3 text-center align-middle">
+              <i class="fa-solid fa-user-clock text-white text-4xl rounded-md bg-lime-600 px-1 py-3"></i>
+              <span class="text-xl font-thin">0</span>
+              <span class="text-sm font-bold">Total</span>
+            </div>
+
+            <div class="flex w-24 flex-col border rounded-xl border-slate-300 bg-gray-100 p-3 text-center align-middle">
+              <i class="fa-solid fa-user-check text-white text-4xl bg-red-800 rounded-md px-1 py-3"></i>
+              <span class="text-xl font-thin">0</span>
+              <span class="text-sm font-bold">Closed</span>
+            </div>
+          </div>
+          <div class="w-full" *ngIf="isShowUploadButton" > 
+            <button id="aaa" (click)="uploadContacts()"
+                class="bg-blue-500 mx-auto block rounded-full w-4/5 p-2 text-lg font-medium uppercase text-white">   <span class="material-icons-outlined">
+                  cloud_upload
+                  </span> UPLOAD
+              </button>
+        </div>
+        </div>
+      </div>
+      <!-- cards ends here----- -->
+
+      <div class="bottom-0 flex justify-between text-xs font-medium capitalize text-gray-500">
+        <span>help</span>
+        <span>by zlivio corp</span>
+        <span>v 1.0</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="assets/person-circle.svg" id="icon" alt="User Icon" />
+    </div>
+    <form #form="ngForm" name="login">
+      <input type="email" id="login" class="fadeIn second" name="useremail" placeholder="login"
+        [(ngModel)]="user.email">
+      <input type="password" id="password" class="fadeIn third" name="userpassword" placeholder="password"
+        [(ngModel)]="user.password">
+      <input type="submit" (click)="submit()" class="fadeIn fourth" value="Log In">
+    </form>
+  </div>
+</div>

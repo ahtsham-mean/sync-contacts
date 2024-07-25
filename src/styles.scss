@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/dist/css/bootstrap.css";
+// /* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+@import '~ngx-toastr/toastr.css';
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+@import '/src/styles/tailwind.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.toast-container .ngx-toastr{
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: unset;
+    border-radius: 6px;
+    color: #fa8b2f;
+}
+.toast-warning{
+    color: #fa8b2f;
+    border: 1px solid #ff9a47;
+    background: #fff;
+}
+.toast-top-right{
+    right: -12px;
+}

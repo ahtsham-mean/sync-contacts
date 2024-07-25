@@ -1,0 +1,23 @@
+<div class="flex items-end w-screen relative h-screen p-4 backdrop-blur-md test animate__animated " [ngClass]="todo ? 'animate__fadeInUpBig animate__faster': 'animate__fadeOutDownBig animate__fast'">
+  <div class="flex flex-col w-full h-5/6 items-center justify-between">
+    <div class="flex flex-col h-2/3 justify-between items-center text-center">
+      <div>
+      <span class="text-xl font-bold capitalize block text-blue-500 m-0">fingerprint authentication</span>
+      <span class="font-thin text-gray-500 text-sm">Confirm the fingerprint to continue.</span>
+    </div>
+      <mat-icon class="fingerprint text-gray-500 mx-auto flex justify-center"
+        [ngClass]="{'class1':isScanning, 'class2': isScanning, 'class3':isNotScanning}">fingerprint</mat-icon>
+
+      <div class="text-center">
+        <span class="text-xs mb-8 text-gray-500 font-thin block">Touch sensor</span>
+        <span class="text-xs text-red-500 block font-semibold capitalize" (click)="close()">cancel</span>
+      </div>
+    </div>
+
+    <div class="flex justify-between w-full text-xs font-normal capitalize text-gray-500">
+      <span>help</span>
+      <span>by zlivio corp</span>
+      <span>v 1.0</span>
+    </div>
+  </div>
+</div>

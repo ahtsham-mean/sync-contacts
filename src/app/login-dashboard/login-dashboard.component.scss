@@ -1,0 +1,19 @@
+.checked {
+    font-size:20px;
+    position:relative;
+    display:inline-block;
+}
+.checked:before {
+    font-size: inherit;
+    content:" ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    // background-image: url("../../assets/images/asterisk.png");
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-size: 16px;
+    background-position: center;
+}

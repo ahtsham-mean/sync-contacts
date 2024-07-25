@@ -1,0 +1,95 @@
+<div class="h-screen w-full bg-blue-500">
+    <!-- header -->
+    <div class="h-25 h-36 w-full rounded-b-3xl bg-[url('assets/images/hill.jpg')] px-3 py-2">
+        <div class="flex justify-between items-center">
+            <span (click)="navigateToDashboard()" class="material-icons text-4xl text-white">keyboard_arrow_left</span>
+        </div>
+    </div>
+    <!-- section content -->
+    <div class="section-content h-[calc(100%-9rem)] w-full p-4">
+        <!-- ------ -->
+        <div class="flex h-full flex-col justify-between">
+
+            <!-- user -->
+            <div>
+                <div
+                    class="mx-auto relative -mt-24 flex w-36 h-36 justify-center items-center rounded-full border bg-slate-50 p-3 text-sm font-bold text-sky-500">
+                    <i class="far fa-user text-7xl text-blue-500"></i>
+                    <i
+                        class="absolute top-0 right-0 flex justify-center items-center fa-solid fa-pen bg-orange-500 w-10 h-10 text-white rounded-full text-xl"></i>
+                </div>
+
+                <!-- header -->
+                <div class="flex flex-col justify-center items-center">
+                    <button
+                    [ngClass]="name =='BUSINESS'? 'uppercase mt-4 font-bold text-base w-36 py-1 px-3 bg-blue-600 rounded-full text-white border-gray-600':''"
+                    [ngClass]="name == 'VIP' ? 'uppercase mt-4 font-bold text-base w-36 py-1 px-3 bg-gray-600 rounded-full text-white border-gray-600' : 'uppercase mt-4 font-bold text-base w-36 py-1 px-3 bg-orange-500 rounded-full text-white border-gray-600' "
+                        (click)="btnName()" >{{name}}</button>
+                    <span class="text-white text-2xl mt-3 -tracking-wider capitalize font-bold">Malik Umair Javed</span>
+                    <span class="text-2xl font-light text-gray-100 tracking-wider">Broker</span>
+                </div>
+
+                <!-- table -->
+                <div class="mx-4 border-t-2 border-t-white mt-2 tracking-wider">
+                    <div class="flex capitalize text-white text-base font-medium my-1">
+                        <div class="flex flex-col mr-5">
+                            <span class="mt-1">company:</span>
+                            <span class="mt-1">Email:</span>
+                            <span class="mt-1">DID:</span>
+                            <span class="mt-1">Cell Phone:</span>
+                        </div>
+                        <div class="flex flex-col font-thin text-gray-200">
+                            <span class="mt-1">century 21</span>
+                            <span class="mt-1">umairid@gmail.com</span>
+                            <span class="mt-1">516 8567890</span>
+                            <span class="mt-1">umairid@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <!-- dropdown Language -->
+
+                    <div class="dropdown-wrapper px-6 mt-2 tracking-wider">
+                        <mat-form-field class="w-ful font-thin">
+                            <mat-label class="text-slate-300">Language</mat-label>
+                            <mat-select>
+                                <mat-option>
+                                    English
+                                </mat-option>
+                                <mat-option>
+                                    Spanish
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <!-- drodpwn help -->
+                        <mat-form-field class="w-ful font-thin">
+                            <mat-label class="text-slate-300">Language</mat-label>
+                            <mat-select>
+                                <mat-option>
+                                    English
+                                </mat-option>
+                                <mat-option>
+                                    spanish
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs font-medium capitalize text-gray-500">
+                        <div>
+                            <div class="flex items-center border-b-2 border-b-gray-300 pb-2">
+                                <button><i class="fa-solid fa-power-off text-2xl text-white"></i></button>
+                                <span class="text-base font-bold text-white pl-2">Get Out</span>
+                            </div>
+                            <p class="text-xs font-thin text-slate-300 pt-2">Lorem ipsum dolor sit, amet consectetur</p>
+                        </div>
+                        <div>
+                            <i
+                                class="top-0 right-0 flex justify-center items-center fa-solid fa-pen border-2 border-white bg-transparent w-10 h-10 text-white rounded-full text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

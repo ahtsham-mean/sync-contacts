@@ -1,0 +1,31 @@
+<div class="sync-contact">
+  <h5>Sync your contacts with Zlivio.</h5>
+  <div>
+    <button (click)="getContactList()" class="btn btn-primary my-3">Sync Contacts</button>
+    <button class="btn btn-danger m-3" (click)="logout()">Logout</button>
+  </div>
+  <table class="table" *ngIf="contacts?.length">
+    <tbody>
+
+      <label for="options">Selected Contacts:</label>
+      <tr *ngFor="let contact of contacts; let i=index" class="mx-1 d-flex align-items-center px-7">
+        <label>
+          <input type="checkbox" class="mr-2" name="options" value="{{contact}}" (change)="selectedContacts(contact)"
+            [(ngModel)]="contact.checked" />
+        </label>
+        <td class="contact-title">
+          {{contact.displayName}}
+          <div *ngFor="let numbers of contact.phoneNumbers">
+            {{numbers.number}}
+          </div>
+        </td>
+        <select class="mr-3" #status (change)="update($event,i)">
+          <option>Select Status</option>
+          <option *ngFor="let status of selectedStatus" [value]="status.id">
+            {{status.name}}
+          </option>
+        </select>
+      </tr>
+    </tbody>
+  </table>
+</div>

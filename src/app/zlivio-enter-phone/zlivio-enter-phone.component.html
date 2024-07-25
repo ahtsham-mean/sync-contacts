@@ -1,0 +1,106 @@
+<div class="flex flex-col justify-between h-screen w-full ">
+
+    <div class="dialpad-wrapper" [ngClass]="showDailPaid ?  'h-[calc(100vh-20rem)]' : 'h-[calc(100vh-0rem)]' ">
+        <div [ngClass]="animation ? 'h-[100%]' : 'h-[60%]' " class="overlay animation  flex justify-center items-center w-full rounded-b-full 
+    custom-shadow bg-cover px-3 py-2 bg-[url('assets/images/building.png')]">
+            <div 
+                class="flex zoom-out flex-col justify-center items-center relative z-10">
+                <img class="w-1/2 h-1/2" src="assets/images/logo.png" alt="" />
+                <span class="text-2xl text-blue-500 flex">Sync <mat-icon class="text-3xl font-bold">sync</mat-icon></span>
+                
+            </div>
+            <div [ngClass]="animation ? 'circle-in' : 'circle-out' " class="animation h-36 w-36 border-4 rounded-full border-gray-300 bg-gray-100/75 absolute"></div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center bg-white">
+            <div class="py-5 w-4/5 mx-auto flex flex-col">
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Cell Phone" hideKeyboard [(ngModel)]="display"
+                        (click)="openDropdown()">
+                </mat-form-field>
+                <span class="text-xs font-thin text-gray-200 capitalize">enter your cell phone number</span>
+            </div>
+
+            <div class="w-full">
+                <button id="aaa" (click)="navigateToLoginDashboard()"
+                    class="bg-blue-500 mx-auto block rounded-full w-4/5 p-2 text-lg font-medium uppercase text-white">GET
+                    INTO</button>
+            </div>
+
+            <div *ngIf="showDailPaid" [ngClass]="showDailPaid ?  'h-[50%]  -bottom-10' : 'h-0 -bottom-10' "
+                class="bg-white test absolute columns-3 w-[90%] text-gray-700 border-t-2 mt-4 py-4 border-t-gray-300">
+                <button class="h-14 w-full font-bold bg-gray-200 mb-3 text-2xl" (click)="numBtn('1')">
+                    <span>1</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('4')">
+                    <span>4</span>
+                    <span class="uppercase font-normal text-sm">ghi</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('7')">
+                    <span>7</span>
+                    <span class="uppercase font-normal text-sm">pqrs</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl p-3"
+                    (click)="numBtn('.')">
+                    <span>.</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('2')">
+                    <span>2</span>
+                    <span class="uppercase font-normal text-sm">abc</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('5')">
+                    <span>5</span>
+                    <span class="uppercase font-normal text-sm">jkl</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('8')">
+                    <span>8</span>
+                    <span class="uppercase font-normal text-sm">tuv</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('0')">0</button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('3')">
+                    <span>3</span>
+                    <span class="uppercase font-normal text-sm">def</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 w-full font-bold bg-gray-200 mb-3 text-2xl"
+                    (click)="numBtn('6')">
+                    <span>6</span>
+                    <span class="uppercase font-normal text-sm">mno</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center h-14 font-bold w-full bg-gray-200 mb-3 text-2xl p-3"
+                    (click)="numBtn('9')">
+                    <span>9</span>
+                    <span class="uppercase font-normal text-sm">wxyz</span>
+                </button>
+                <button
+                    class="flex flex-col justify-center items-center backspace-icon h-14 w-full font-bold bg-gray-200 mb-3 text-2xl p-3"
+                    (click)="clsBtn()">
+                    <mat-icon fontSet="material-icons-outlined" class="text-4xl">backspace</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!showDailPaid" class="flex bg-white justify-between text-xs font-medium capitalize text-gray-500 p-4">
+        <span>help</span>
+        <span>by zlivio corp</span>
+        <span>v 1.0</span>
+    </div>
+
+</div>

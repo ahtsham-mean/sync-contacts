@@ -1,0 +1,81 @@
+<div class="h-screen w-full bg-white">
+    <!-- header -->
+    <div class="w-full px-3 py-4">
+        <div class="flex justify-between items-center text-xl text-white font-medium capitalize">
+            <span (click)="navigateToZlivioEnterPhone()"
+                class="material-icons font-bold text-4xl text-blue-500">keyboard_arrow_left</span>
+            <img class="w-4 h-4" src="assets/images/logo.png" alt="" />
+            <span></span>
+        </div>
+    </div>
+    <!-- section content -->
+    <div class="flex flex-col justify-between section-content h-[calc(100%-4.4rem)] w-full px-3 sm:px-6 p-4">
+        <div class="w-full">
+            <p class="text-blue-500 uppercase text-sm font-semibold">enter your pin</p>
+            <form #myForm="ngForm">
+                <div class="flex justify-around m-0 sm:mx-4 my-8">
+                    <!-- passowrd fields -->
+                    <div 
+                    [ngClass]="isValidate ? 'flex justify-center items-center h-11 w-11 border border-gray-500 rounded-md rotate-45' : 'flex justify-center items-center h-11 w-11 border border-red-500 rounded-md rotate-45' " 
+                       >
+                        <input type="password" name="pass1" #pass1="ngModel"   maxlength="1" id="1" hideKeyboard [(ngModel)]="display[0]"
+                            class="text-lg text-center -rotate-45 font-semibold w-8 outline-none caret-white">
+                            <span *ngIf="pass1.touched ?'text-lg text-center -rotate-45 font-semibold w-8 outline-none caret-white':'' "></span>
+                    </div>
+                    <div 
+                    [ngClass]="isValidate ? 'flex justify-center items-center h-11 w-11 border border-gray-500 rounded-md rotate-45' : 'flex justify-center items-center h-11 w-11 border border-red-500 rounded-md rotate-45' " >
+                        <input type="password" name="pass2" #pass2="ngModel" maxlength="1" hideKeyboard  [(ngModel)]="display[1]" id="2"
+                            class="text-lg text-center -rotate-45 font-semibold w-8 outline-none caret-white">
+                    </div>
+                    <div    [ngClass]="isValidate ? 'flex justify-center items-center h-11 w-11 border border-gray-500 rounded-md rotate-45' : 'flex justify-center items-center h-11 w-11 border border-red-500 rounded-md rotate-45' " >
+                        <input type="password" name="pass3" #pass3="ngModel" maxlength="1" hideKeyboard  id="3" [(ngModel)]="display[2]"
+                            class="text-lg text-center -rotate-45 font-semibold w-8 outline-none caret-white">
+                    </div>
+                    <div 
+                    [ngClass]="isValidate ? 'flex justify-center items-center h-11 w-11 border border-gray-500 rounded-md rotate-45' : 'flex justify-center items-center h-11 w-11 border border-red-500 rounded-md rotate-45' " >
+                        <input type="password" name="pass4" #pass4="ngModel" maxlength="1" hideKeyboard  id="4" [(ngModel)]="display[3]"
+                            class="text-lg text-center -rotate-45 font-semibold w-8 outline-none caret-white">
+                    </div>
+
+                </div>
+                <div class="text-blue-600 text-center"> {{wrongFingerPrint ? 'Wrong FingerPrint' : 'We dont doubt that
+                    is you, but is better confirm'}} </div>
+                <div class="flex justify-center items-center pt-7">
+                    <div *ngIf="isFingerSecurityID" (click)="openFingerPrint()"
+                        class="text-center flex justify-center items-center border  border-blue-500 rounded-full h-12 w-12">
+                        <mat-icon class="text-blue-600 h-12 w-12">fingerprint</mat-icon>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center items-center">
+                    <div *ngIf="isFaceSecurityID" (click)="openFingerPrint()"
+                        class="flex justify-center items-center border border-blue-500 rounded-full h-16 w-16">
+                        <mat-icon class="text-blue-600 ">face</mat-icon>
+                    </div>
+                </div>
+                <app-face-unlock *ngIf="openFaceId" class="absolute top-0 left-0 z-10 h-screen" (closeModal)="openFaceUnlock()">
+                </app-face-unlock>
+                <app-fingerprint (closeModal)="openFingerPrint()" class="absolute top-0 h-screen left-0 z-10"
+                *ngIf="openFingerPrints "></app-fingerprint>
+                <div class="columns-3 pt-9">
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('1')">1</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('4')">4</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('7')">7</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl p-3" (click)="clearButton()">
+                        <mat-icon fontSet="material-icons-outlined" class="text-4xl ">backspace</mat-icon>
+                    </button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('2')">2</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('5')">5</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('8')">8</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('0')">0</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('3')">3</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl" (click)="numberBtn('6')">6</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl p-3" (click)="numberBtn('9')">9</button>
+                    <button class="h-16 w-full font-bold text-blue-600 text-2xl p-3" (click)="login()">OK</button>    
+                </div>
+            </form>
+        </div>
+    </div>
+    <div (click)="forgetPassword()" class="text-blue-600 flex justify-center py-2  w-full absolute bottom-0"> I do not
+        remember </div>
+</div>

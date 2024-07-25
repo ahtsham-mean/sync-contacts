@@ -1,0 +1,104 @@
+<div class="h-screen w-full" [hidden]="isHide || hideDash">
+    <div class="absolute bg-[url('assets/images/building.png')] bg-no-repeat bg-cover blur-lg h-screen w-screen"></div>
+    <!-- section content -->
+    <div class="flex flex-col relative justify-between bg-slate-100/60 h-screen w-screen px-3 p-4">
+        <div class="flex flex-col justify-between items-center my-8 h-64">
+            <div class="flex flex-col items-center mt-6">
+                <img src="assets/images/logo.png" width="35" alt="">
+                <div>
+                    <span class="text-md font-normal text-blue-500">Sync</span><i
+                        class="pl-2 fa-solid text-blue-500 fa-rotate text-md"></i>
+                </div>
+            </div>
+
+
+            <!-- Slider -->
+
+            <div id="carouselExampleCaptions" data-interval="false" class="carousel relative w-full" data-carousel="false">
+                <div class="carousel-indicators absolute right-0 left-0 flex justify-center p-0 mb-4 -bottom-8">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                        class="active w-8 h-8" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"  >
+                    </button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner relative overflow-hidden w-9/12 mx-auto cursor-progress">
+                    <div class="carousel-item active relative float-left w-full" >
+                        <div class="flex items-center min-w-full h-32 px-4 bg-white">
+                            <div class="flex flex-col items-center carousel-caption md:block text-center py-3">
+                                <span class="text-md font-bold text-blue-500 mb-1">What does zlivio sync do?</span>
+                                <span class="font-thin text-blue-500 text-xs">The work of  <b
+                                        class="font-bold">zlivio sync</b> en Synchronize in <b class="font-bold">3</b> simple steps your business contacts and leeds
+                                    with <b class="font-bold">zlivio sync</b>?</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item relative float-left w-full" >
+                        <div class="flex items-center min-w-full px-4 h-32 bg-white">
+                            <div class="flex flex-col items-center carousel-caption md:block text-center py-3">
+                                <i class="fa-regular fa-address-book mb-1 text-blue-500 text-2xl"></i>
+                                <span class="text-md font-bold uppercase text-blue-500 mb-1">step 1</span>
+                                <span class="font-thin text-blue-500 text-xs">Give him access to <b
+                                        class="font-bold">zlivio sync</b> To your contacts.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item relative float-left w-full">
+                        <div class="block min-w-full px-4 bg-white">
+                            <div class="flex flex-col items-center carousel-caption md:block text-center py-3">
+                                <i class="fa-regular fa-circle-check mb-1 text-blue-500 text-2xl"></i>
+                                <span class="text-md font-bold uppercase text-blue-500 mb-1">step 2</span>
+                                <span class="font-thin text-blue-500 text-xs">Select the business contacts you want to
+                                    Synchronize and their Status.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item relative float-left w-full">
+                        <div class="block min-w-full px-4 bg-white">
+                            <div class="flex flex-col items-center carousel-caption md:block text-center py-3">
+                                <i class="fa-solid fa-cloud-arrow-up mb-1 text-blue-500 text-2xl"></i>
+                                <span class="text-md font-bold uppercase text-blue-500 mb-1">step 3</span>
+                                <span class="font-thin text-blue-500 text-xs">
+                                    Upload
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="previous($event)"
+                    class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                    type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="inline-block bg-no-repeat" aria-hidden="true"><i
+                            class="fa-solid fa-angle-left text-blue-700 text-2xl font-black"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button (click)="navigate()"
+                    class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                    type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="inline-block bg-no-repeat" aria-hidden="true" ><i
+                            class="fa-solid fa-angle-right text-blue-700 text-2xl font-bold" ></i></span>
+                    <span class="visually-hidden"  data-bs-slide-to="1" >Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="flex justify-between text-xs font-medium capitalize text-gray-500">
+            <span>help</span>
+            <span>by zlivio corp</span>
+            <span>v 1.0</span>
+        </div>
+    </div>
+</div>
+<div [hidden]="!isHide">
+<app-contact-access *ngIf="isHide" [isHide]="isHide" (hideSlider)="getPermission($event)" (hideaccess)="accessContact($event)"></app-contact-access>
+</div>
+
+<div [hidden]="!hideDash">
+    <app-zlivio-dashboard *ngIf="hideDash"></app-zlivio-dashboard>
+    </div>
